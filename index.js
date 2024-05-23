@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use("/admin", adminRouter)
 app.use("/user", userRouter)
 
-const PORT = 3000;
+const PORT = process.env.PORT
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });

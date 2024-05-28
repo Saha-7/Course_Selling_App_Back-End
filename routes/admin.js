@@ -5,9 +5,16 @@ const {JWT_SECRET} = require("../config");
 const router = Router();
 const jwt = require("jsonwebtoken");
 
+router.get("/home",(req,res)=>{
+res.json({
+    msg: "App is working"
+})
+})
+
+
 // Admin Routes
 router.post('/signup', async (req, res) => {
-    // Implement admin signup logic
+    // Implemented admin signup logic
     const username = req.body.username;
     const password = req.body.password;
 
@@ -23,10 +30,10 @@ router.post('/signup', async (req, res) => {
 });
 
 router.post('/signin', async (req, res) => {
-    // Implement admin signup logic
+    // Implemented admin signup logic
     const username = req.body.username;
     const password = req.body.password;
-    console.log(JWT_SECRET);
+   // console.log(JWT_SECRET);
 
     const user = await User.find({
         username,
@@ -49,7 +56,7 @@ router.post('/signin', async (req, res) => {
 
 
 router.post('/courses', adminMiddleware, async (req, res) => {
-    // Implement course creation logic
+    // Implemented course creation logic
     const title = req.body.title;
     const description = req.body.description;
     const imageLink = req.body.imageLink;
@@ -68,7 +75,7 @@ router.post('/courses', adminMiddleware, async (req, res) => {
 });
 
 router.get('/courses', adminMiddleware, async (req, res) => {
-    // Implement fetching all courses logic
+    // Implemented fetching all courses logic
     const response = await Course.find({});
 
     res.json({

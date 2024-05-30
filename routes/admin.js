@@ -5,7 +5,7 @@ const {JWT_SECRET} = require("../config");
 const router = Router();
 const jwt = require("jsonwebtoken");
 
-router.get("/home",(req,res)=>{
+router.get("/",(req,res)=>{
 res.json({
     msg: "App is working"
 })

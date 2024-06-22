@@ -12,7 +12,7 @@
  
 - POST /admin/courses
   Description: Creates a new course.
-  Input: Headers: { 'Authorization': 'Bearer <your-token>' }, Body: { title: 'course title', description: 'course description', price: 100, imageLink: 'https://linktoimage.com' }
+  Input: Headers: { 'Authorization': 'Bearer <your-token>' }, Body: { title: 'course title', description: 'course description', price: 100, imageLink: 'https://xyz.com' }
   
 - GET /admin/courses
   Description: Returns all the courses.
